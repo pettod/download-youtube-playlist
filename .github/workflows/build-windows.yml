@@ -16,7 +16,8 @@ jobs:
       - name: Install dependencies
           # We install pyyaml because your code imports it
         run: |
-          pip install pyinstaller pyyaml 
+          pip install -r requirements.txt
+          pip install pyinstaller 
 
       - name: Build with PyInstaller
           # This builds the EXE on a Windows OS
