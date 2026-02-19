@@ -32,7 +32,7 @@ def get_all_video_urls(channel_id: str) -> List[YouTubeVideo]:
     if not ch_response.get('items'):
         raise ValueError(f"No channel found for: {channel_id}")
     
-    if YOUTUBE_PLAYLIST_ID:
+    if YOUTUBE_PLAYLIST_ID != "":
         uploads_playlist_id = YOUTUBE_PLAYLIST_ID
     else:
         uploads_playlist_id = ch_response['items'][0]['contentDetails']['relatedPlaylists']['uploads']
