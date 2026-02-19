@@ -1,0 +1,7 @@
+pyyaml
+yt-dlp
+tqdm
+google-genai
+pydantic
+python-dotenv
+google-api-python-client
