@@ -23,6 +23,12 @@ jobs:
           # This builds the EXE on a Windows OS
         run: pyinstaller --onefile --console --name download download.py
 
+      - name: Move EXE and Cleanup
+        # We move the exe to the root, then remove the dist and build folders
+        run: |
+          Move-Item -Path "dist\download.exe" -Destination ".\"
+          Remove-Item -Path "dist", "build" -Recurse -Force
+
       - name: Upload Zip Bundle
         uses: actions/upload-artifact@v4
         with:
